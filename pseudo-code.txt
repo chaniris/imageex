@@ -1,0 +1,7 @@
+// initialize app with namespacing 
+// ensure data pulls from api by printing response data to console log 
+// when user clicks 'submit'/hits enter: 
+// - search unsplash database for photos according to user input value 
+// - clear any photo results and clear the input in the searchbar 
+// - pass in new photos in 3x3 grid and display photographers' information under each photo 
+// print error message to page if there is a typo/empty string/api is down (error handling) 
