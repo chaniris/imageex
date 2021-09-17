@@ -20,19 +20,32 @@
 // - create error handling if api fails 
 
 
-const apiUrl = new URL('https://api.unsplash.com/photos/');
 
-apiUrl.search = new URLSearchParams({
-    client_id: 'K2sdLG2yACbMhSZqfdaiAzihh_avP6bmzIoN6C11n1Q',
-    per_page: 9
-});
+const app = {}; 
 
-// console.log(apiUrl);
+app.apiUrl = new URL('https://api.unsplash.com/photos/');
 
-fetch(apiUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (res) {
-        console.log(res);
-    }) 
+app.apiKey = 'K2sdLG2yACbMhSZqfdaiAzihh_avP6bmzIoN6C11n1Q'; 
+
+app.getPhotos = () => { 
+    const unsplashEndpoint = new URL(app.apiUrl); 
+    unsplashEndpoint.search = new URLSearchParams({
+        client_id: app.apiKey 
+        
+    });
+
+    fetch(unsplashEndpoint)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (res) {
+            console.log(res);
+        })
+};
+
+app.init = () => {
+    app.getPhotos(); 
+}
+
+
+app.init(); 
