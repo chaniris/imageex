@@ -23,17 +23,17 @@
 // declare app object 
 const app = {}; 
 
-app.apiUrl = new URL('https://api.unsplash.com/photos/');
+app.apiUrl = new URL('https://api.unsplash.com/search/photos');
 app.apiKey = 'K2sdLG2yACbMhSZqfdaiAzihh_avP6bmzIoN6C11n1Q'; 
 
 // create method to get data from api 
-app.getPhotos = () => { 
+app.getPhotos = (searchTerm) => { 
     // use url constructors to define parameters 
     const unsplashEndpoint = new URL(app.apiUrl); 
     unsplashEndpoint.search = new URLSearchParams({
         // pass in parameters 
-        client_id: app.apiKey 
-        
+        client_id: app.apiKey, 
+        query: searchTerm
     });
 
     // request data with fetch api 
@@ -54,14 +54,15 @@ app.getUserInput = () => {
         console.log(event);
         const searchTerm = document.querySelector('#searchInput').value; 
         console.log(searchTerm);
+        app.getPhotos(searchTerm);
     })
 }
 
+// create init method that will run when app loads
 app.init = () => {
     app.form = document.querySelector('form')
     app.getUserInput(); 
-    app.getPhotos();
 }
 
-
+// call the init method to kickstart our app 
 app.init(); 
