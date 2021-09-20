@@ -1,0 +1,45 @@
+header {
+    border: 3px solid black; 
+} 
+
+h1 {
+    font-size: $font-size-xl; 
+    font-family: $font-secondary; 
+    // text-transform: uppercase;
+} 
+
+form {
+    height: 50vh; 
+    border: 3px solid red; 
+} 
+
+label {
+    border: 3px solid lime; 
+} 
+
+input {
+    border: 3px solid blue; 
+} 
+
+footer {
+    // background-color: $color-black; 
+    color: $color-white; 
+    font-size: $font-size-xxs;
+    border: 3px solid magenta; 
+} 
+
+a {
+    text-decoration: none;
+    transition: all .2s;
+} 
+
+a:link,
+a:visited {
+    color: $color-white; 
+} 
+
+a:hover,
+a:focus {
+    color: $color-blue; 
+    border-bottom: 1px solid $color-blue; 
+}
