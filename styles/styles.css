@@ -254,7 +254,7 @@ html {
 }
 
 body {
-  background-color: #AAA439;
+  background-color: #fff7d6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,44 +267,85 @@ body {
           align-items: center;
 }
 
-section {
-  border: 3px solid magenta;
+main {
+  max-width: 1080px;
+  width: 90%;
+  margin: 4rem 0;
 }
 
 header {
-  border: 3px solid black;
   width: 100%;
 }
 
 h1 {
-  font-size: 5.653rem;
-  font-family: "Bitter", serif;
   width: 100%;
-}
-
-form {
-  border: 3px solid red;
-}
-
-label {
-  border: 3px solid lime;
+  font-family: "Bitter", serif;
+  color: #29526D;
+  font-size: 5.653rem;
 }
 
 input {
-  border: 3px solid blue;
+  padding: 0.5rem;
+  border: 2px solid #29526D;
 }
 
-img {
-  width: 100%;
+input:focus {
+  color: #29526D;
+}
+
+button {
+  background-color: #AA3939;
+  color: #fff7d6;
+  text-transform: uppercase;
+  border: 2px solid #fff7d6;
+  border-radius: 0.3rem;
+  padding: 0.5rem 2rem;
+}
+
+button:hover,
+button:focus {
+  background-color: #fff7d6;
+  color: #AA3939;
+  border: 2px solid #AA3939;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .galleryCard {
   list-style-type: none;
-  border: 3px solid yellow;
+  margin: 1rem;
+  position: relative;
+}
+
+.textContainer {
+  background-color: #29526D;
+  color: #ffffff;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 footer {
-  background-color: #000000;
+  background-color: #AA3939;
   color: #ffffff;
   font-size: 1rem;
   width: 100%;

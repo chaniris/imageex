@@ -32,6 +32,8 @@ body {
     align-items: center;
 }
 
-section {
-    border: 3px solid magenta; 
-} 
+main {
+    max-width: 1080px;
+    width: 90%;
+    margin: $space-lrg 0; 
+}

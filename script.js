@@ -55,8 +55,8 @@ app.displayPhotos = (jsonData) => {
         const listItem = `
             <li>
             
-
             
+
             </li> 
         `; 
     })
