@@ -1,16 +1,13 @@
 header {
     border: 3px solid black; 
     width: 100%; 
-
 } 
 
 h1 {
     font-size: $font-size-xxl; 
     font-family: $font-secondary; 
     // text-transform: uppercase;
-    border: 3px solid yellow; 
     width: 100%; 
-
 } 
 
 form {
@@ -25,12 +22,22 @@ input {
     border: 3px solid blue; 
 } 
 
+img {
+    width: 100%;
+}
+
+.galleryCard {
+    list-style-type: none;
+    border: 3px solid yellow; 
+} 
+
 footer {
-    // background-color: $color-black; 
+    background-color: $color-black; 
     color: $color-white; 
     font-size: $font-size-xs;
-    border: 3px solid magenta; 
     width: 100%; 
+    position: fixed;  
+    bottom: 0px; 
 
 } 
 

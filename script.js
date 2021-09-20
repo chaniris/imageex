@@ -43,10 +43,24 @@ app.getPhotos = (searchTerm) => {
             return response.json();
         })
         .then((jsonData) => {
-            console.log(jsonData);
-
+            console.log(jsonData.results);
+            app.displayPhotos(jsonData.results); 
         })
 };
+
+// create a method to display photos to page 
+app.displayPhotos = (jsonData) => {
+    const gallery = document.querySelector('.gallery'); 
+    jsonData.forEach( (img) => {
+        const listItem = `
+            <li>
+            
+
+            
+            </li> 
+        `; 
+    })
+} 
 
 app.getUserInput = () => {
     app.form.addEventListener('submit', (event) => {

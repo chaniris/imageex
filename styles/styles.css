@@ -267,10 +267,8 @@ body {
           align-items: center;
 }
 
-main {
-  height: 20rem;
-  border: 3px solid orange;
-  width: 100%;
+section {
+  border: 3px solid magenta;
 }
 
 header {
@@ -281,7 +279,6 @@ header {
 h1 {
   font-size: 5.653rem;
   font-family: "Bitter", serif;
-  border: 3px solid yellow;
   width: 100%;
 }
 
@@ -297,11 +294,22 @@ input {
   border: 3px solid blue;
 }
 
+img {
+  width: 100%;
+}
+
+.galleryCard {
+  list-style-type: none;
+  border: 3px solid yellow;
+}
+
 footer {
+  background-color: #000000;
   color: #ffffff;
   font-size: 1rem;
-  border: 3px solid magenta;
   width: 100%;
+  position: fixed;
+  bottom: 0px;
 }
 
 a {
