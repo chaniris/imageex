@@ -1,15 +1,19 @@
 header {
     border: 3px solid black; 
+    width: 100%; 
+
 } 
 
 h1 {
-    font-size: $font-size-xl; 
+    font-size: $font-size-xxl; 
     font-family: $font-secondary; 
     // text-transform: uppercase;
+    border: 3px solid yellow; 
+    width: 100%; 
+
 } 
 
 form {
-    height: 50vh; 
     border: 3px solid red; 
 } 
 
@@ -24,8 +28,10 @@ input {
 footer {
     // background-color: $color-black; 
     color: $color-white; 
-    font-size: $font-size-xxs;
+    font-size: $font-size-xs;
     border: 3px solid magenta; 
+    width: 100%; 
+
 } 
 
 a {

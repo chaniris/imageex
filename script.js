@@ -20,31 +20,47 @@
 // - create error handling if api fails 
 
 
-
+// declare app object 
 const app = {}; 
 
 app.apiUrl = new URL('https://api.unsplash.com/photos/');
-
 app.apiKey = 'K2sdLG2yACbMhSZqfdaiAzihh_avP6bmzIoN6C11n1Q'; 
 
+// create method to get data from api 
 app.getPhotos = () => { 
+    // use url constructors to define parameters 
     const unsplashEndpoint = new URL(app.apiUrl); 
     unsplashEndpoint.search = new URLSearchParams({
+        // pass in parameters 
         client_id: app.apiKey 
         
     });
 
+    // request data with fetch api 
     fetch(unsplashEndpoint)
-        .then(function (response) {
+        .then((response) => {
+            // parse response and convert into json object
             return response.json();
         })
-        .then(function (res) {
-            console.log(res);
+        .then((jsonData) => {
+            console.log(jsonData);
+
         })
 };
 
+app.getUserInput = () => {
+    app.form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log(event);
+        const searchTerm = document.querySelector('#searchInput').value; 
+        console.log(searchTerm);
+    })
+}
+
 app.init = () => {
-    app.getPhotos(); 
+    app.form = document.querySelector('form')
+    app.getUserInput(); 
+    app.getPhotos();
 }
 
 
