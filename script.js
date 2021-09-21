@@ -62,6 +62,9 @@ app.displayPhotos = (jsonData) => {
                 <div class ="textContainer">
                     <p class="photoInfo">${img.user.name}</p>
                     <p class="photoInfo">
+                        <i class="fab fa-twitter"></i> <a href="https://twitter.com/${img.user.twitter_username ? img.user.twitter_username : ''}">${img.user.twitter_username}</a>
+                    </p>
+                    <p class="photoInfo">
                         <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/${img.user.instagram_username ? img.user.instagram_username : ''}">${img.user.instagram_username}</a>
                     </p>
                 </div>

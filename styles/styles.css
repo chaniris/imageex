@@ -354,8 +354,12 @@ footer {
   bottom: 0px;
 }
 
-i {
-  color: #AA3939;
+.fa-twitter {
+  color: #1DA1F2;
+}
+
+.fa-instagram {
+  color: #DD2A7B;
 }
 
 a {
