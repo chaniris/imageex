@@ -46,6 +46,9 @@ app.getPhotos = (searchTerm) => {
             console.log(jsonData.results);
             app.displayPhotos(jsonData.results); 
         })
+        .catch((error) => {
+            console.log(error);
+        })
 };
 
 // create a method to display photos to page 
@@ -59,7 +62,7 @@ app.displayPhotos = (jsonData) => {
                 <div class ="textContainer">
                     <p class="photoInfo">${img.user.name}</p>
                     <p class="photoInfo">
-                        <i class="fab fa-instagram"></i><a href="https://www.instagram.com/${img.user.instagram_username ? img.user.instagram_username : ''}"> ${img.user.instagram_username}</a>
+                        <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/${img.user.instagram_username ? img.user.instagram_username : ''}">${img.user.instagram_username}</a>
                     </p>
                 </div>
             </li>
@@ -74,6 +77,7 @@ app.getUserInput = () => {
         console.log(event);
         const searchTerm = document.querySelector('#searchInput').value; 
         console.log(searchTerm);
+        document.querySelector('#searchInput').value = '';
         app.getPhotos(searchTerm);
     })
 }
