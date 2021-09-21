@@ -51,14 +51,20 @@ app.getPhotos = (searchTerm) => {
 // create a method to display photos to page 
 app.displayPhotos = (jsonData) => {
     const gallery = document.querySelector('.gallery'); 
+    gallery.innerHTML = ''; 
     jsonData.forEach( (img) => {
         const listItem = `
-            <li>
-            
-            
-
-            </li> 
+            <li class ="galleryCard">
+                <div class ="imgContainer"><img src="${img.urls.regular}" alt="${img.alt_description}"></div>
+                <div class ="textContainer">
+                    <p class="photoInfo">${img.user.name}</p>
+                    <p class="photoInfo">
+                        <i class="fab fa-instagram"></i><a href="https://www.instagram.com/${img.user.instagram_username ? img.user.instagram_username : ''}"> ${img.user.instagram_username}</a>
+                    </p>
+                </div>
+            </li>
         `; 
+        gallery.insertAdjacentHTML('beforeend', listItem); 
     })
 } 
 

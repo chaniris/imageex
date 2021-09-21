@@ -349,8 +349,13 @@ footer {
   color: #ffffff;
   font-size: 1rem;
   width: 100%;
-  position: fixed;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   bottom: 0px;
+}
+
+i {
+  color: #AA3939;
 }
 
 a {

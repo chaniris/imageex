@@ -73,8 +73,12 @@ footer {
     color: $color-white; 
     font-size: $font-size-xs;
     width: 100%; 
-    position: fixed;  
+    align-self: flex-end;
     bottom: 0px; 
+} 
+
+i {
+    color: $color-tertiary; 
 } 
 
 a {
