@@ -299,7 +299,7 @@ button {
   text-transform: uppercase;
   border: 2px solid #fff7d6;
   border-radius: 0.3rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 button:hover,
@@ -352,6 +352,10 @@ footer {
   -ms-flex-item-align: end;
       align-self: flex-end;
   bottom: 0px;
+}
+
+.photoInfo {
+  font-weight: bold;
 }
 
 .fa-twitter {
