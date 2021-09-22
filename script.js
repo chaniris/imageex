@@ -14,40 +14,42 @@
 // - initialize app with namespacing 
 // - ensure data pulls from api by printing response data to console log 
 // - when user clicks 'submit'/hits enter: 
-    //* search unsplash database for photos according to user input value 
-    //* clear any photo results and clear the input in the searchbar 
-    //* pass in new photos in 3x3 grid and display photographers' information under each photo 
+//* search unsplash database for photos according to user input value 
+//* clear any photo results and clear the input in the searchbar 
+//* pass in new photos in 3x3 grid and display photographers' information under each photo 
 // - create error handling if api fails 
 
 
 // declare app object 
-const app = {}; 
+const app = {};
 
 app.apiUrl = new URL('https://api.unsplash.com/search/photos');
-app.apiKey = 'K2sdLG2yACbMhSZqfdaiAzihh_avP6bmzIoN6C11n1Q'; 
+app.apiKey = 'K2sdLG2yACbMhSZqfdaiAzihh_avP6bmzIoN6C11n1Q';
 
 
-app.renderError = function(error) {
-  const body = document.querySelector('body');
-  console.log('From renderError function', error);
+app.renderError = function (error) {
+    const body = document.querySelector('body');
+    console.log('From renderError function', error);
 
-  const html = `
-  <div class="errorContainer">
-    <p class="errorCopy">${error.message}</p>
-  </div>
-  `;
+    const html = `
+        <div class="errorContainer">
+            <p class="errorCopy">${error.message}</p>
+        </div>
+    `; setTimeout(function () {
+        document.querySelector('.errorContainer').style.visibility = 'hidden';
+    }, 1000);
 
-  body.insertAdjacentHTML('afterbegin', html);
+    body.insertAdjacentHTML('afterbegin', html);
 }
 
 
 // create method to get data from api 
-app.getPhotos = (searchTerm) => { 
+app.getPhotos = (searchTerm) => {
     // use url constructors to define parameters 
-    const unsplashEndpoint = new URL(app.apiUrl); 
+    const unsplashEndpoint = new URL(app.apiUrl);
     unsplashEndpoint.search = new URLSearchParams({
         // pass in parameters 
-        client_id: app.apiKey, 
+        client_id: app.apiKey,
         query: searchTerm
     });
 
@@ -55,36 +57,36 @@ app.getPhotos = (searchTerm) => {
     fetch(unsplashEndpoint)
         .then((response) => {
 
-          console.log(response);
+            console.log(response);
 
-          if(response.ok === true) {
-              // parse response and convert into json object
-              return response.json();
-            } else if(response.ok === false) {
-              throw new Error('Oops! Something went wrong! 😔');
+            if (response.ok === true) {
+                // parse response and convert into json object
+                return response.json();
+            } else if (response.ok === false) {
+                throw new Error('<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.');
             }
 
         })
         .then((jsonData) => {
 
-            if(jsonData.total === 0) {
-              throw new Error('Oops! Something went wrong! 😔');
+            if (jsonData.total === 0) {
+                throw new Error('<i class="fas fa-exclamation-circle"></i> Oops! Something went wrong.');
             }
 
             console.log(jsonData.results);
-            app.displayPhotos(jsonData.results); 
+            app.displayPhotos(jsonData.results);
         })
         .catch((error) => {
-          console.log('From catch', error.message);
+            console.log('From catch', error.message);
             app.renderError(error);
         })
 };
 
 // create a method to display photos to page 
 app.displayPhotos = (jsonData) => {
-    const gallery = document.querySelector('.gallery'); 
-    gallery.innerHTML = ''; 
-    jsonData.forEach( (img) => {
+    const gallery = document.querySelector('.gallery');
+    gallery.innerHTML = '';
+    jsonData.forEach((img) => {
         const listItem = `
             <li class ="galleryCard">
                 <div class ="imgContainer"><img src="${img.urls.regular}" alt="${img.alt_description}"></div>
@@ -98,16 +100,16 @@ app.displayPhotos = (jsonData) => {
                     </p>
                 </div>
             </li>
-        `; 
-        gallery.insertAdjacentHTML('beforeend', listItem); 
+        `;
+        gallery.insertAdjacentHTML('beforeend', listItem);
     })
-} 
+}
 
 app.getUserInput = () => {
     app.form.addEventListener('submit', (event) => {
         event.preventDefault();
         console.log(event);
-        const searchTerm = document.querySelector('#searchInput').value; 
+        const searchTerm = document.querySelector('#searchInput').value;
         console.log(searchTerm);
         document.querySelector('#searchInput').value = '';
         app.getPhotos(searchTerm);
@@ -117,8 +119,8 @@ app.getUserInput = () => {
 // create init method that will run when app loads
 app.init = () => {
     app.form = document.querySelector('form')
-    app.getUserInput(); 
+    app.getUserInput();
 }
 
 // call the init method to kickstart our app 
-app.init(); 
+app.init();

@@ -311,7 +311,7 @@ main {
 .errorContainer {
   width: 60%;
   height: 2rem;
-  background: #d80000;
+  background: #fdf2f5;
   position: fixed;
   border-radius: 0 0 5px 5px;
   display: -webkit-box;
@@ -323,9 +323,11 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 10;
 }
 .errorContainer .errorCopy {
-  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+  color: #d70022;
 }
 
 header {
