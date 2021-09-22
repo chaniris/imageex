@@ -1,0 +1,14 @@
+.errorContainer {
+  width: 60%;
+  height: 2rem;
+  background: rgb(216, 0, 0);
+  position: fixed;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .errorCopy {
+    text-transform: uppercase;
+  }
+}

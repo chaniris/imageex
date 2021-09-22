@@ -26,6 +26,21 @@ const app = {};
 app.apiUrl = new URL('https://api.unsplash.com/search/photos');
 app.apiKey = 'K2sdLG2yACbMhSZqfdaiAzihh_avP6bmzIoN6C11n1Q'; 
 
+
+app.renderError = function(error) {
+  const body = document.querySelector('body');
+  console.log('From renderError function', error);
+
+  const html = `
+  <div class="errorContainer">
+    <p class="errorCopy">${error.message}</p>
+  </div>
+  `;
+
+  body.insertAdjacentHTML('afterbegin', html);
+}
+
+
 // create method to get data from api 
 app.getPhotos = (searchTerm) => { 
     // use url constructors to define parameters 
@@ -39,15 +54,29 @@ app.getPhotos = (searchTerm) => {
     // request data with fetch api 
     fetch(unsplashEndpoint)
         .then((response) => {
-            // parse response and convert into json object
-            return response.json();
+
+          console.log(response);
+
+          if(response.ok === true) {
+              // parse response and convert into json object
+              return response.json();
+            } else if(response.ok === false) {
+              throw new Error('Oops! Something went wrong! 😔');
+            }
+
         })
         .then((jsonData) => {
+
+            if(jsonData.total === 0) {
+              throw new Error('Oops! Something went wrong! 😔');
+            }
+
             console.log(jsonData.results);
             app.displayPhotos(jsonData.results); 
         })
         .catch((error) => {
-            console.log(error);
+          console.log('From catch', error.message);
+            app.renderError(error);
         })
 };
 
