@@ -82,6 +82,30 @@ app.getPhotos = (searchTerm) => {
         })
 };
 
+app.renderTwitter = function(img) {
+  if(img.user.twitter_username) { 
+    const showTwitterLink = `
+      <i class="fab fa-twitter"></i>
+      <a href="https://twitter.com/${img.user.twitter_username}" target="_blank">${img.user.twitter_username}</a>
+    `;
+    return showTwitterLink; 
+  } else { 
+    return ''; 
+  } 
+}
+
+app.renderInstagram = function(img) {
+  if(img.user.instagram_username) { 
+    const showInstagramLink = `
+      <i class="fab fa-instagram"></i>
+      <a href="https://instagram.com/${img.user.instagram_username}" target="_blank">${img.user.instagram_username}</a>
+    `;
+    return showInstagramLink; 
+  } else { 
+    return ''; 
+  } 
+}
+
 // create a method to display photos to page 
 app.displayPhotos = (jsonData) => {
     const gallery = document.querySelector('.gallery');
@@ -93,16 +117,10 @@ app.displayPhotos = (jsonData) => {
                 <div class ="textContainer">
                     <p class="photoInfo">${img.user.name}</p>
                     <p>
-                        <i class="fab fa-twitter"></i> 
-                        <a href="https://twitter.com/${img.user.twitter_username ? img.user.twitter_username : ''}" target="_blank">
-                            ${img.user.twitter_username ? img.user.twitter_username : ''}
-                        </a>
+                        ${app.renderTwitter(img)}
                     </p>
                     <p>
-                        <i class="fab fa-instagram"></i> 
-                        <a href="https://www.instagram.com/${img.user.instagram_username ? img.user.instagram_username : ''}" target="_blank">
-                            ${img.user.instagram_username ? img.user.instagram_username : ''}
-                        </a>
+                        ${app.renderInstagram(img)}
                     </p>
                 </div>
             </li>
