@@ -1,107 +1,111 @@
 header {
-    width: 100%; 
-} 
+  width: 100%;
+}
 
 h1 {
-    width: 100%; 
-    font-family: $font-secondary; 
-    color: $color-secondary; 
-    font-size: $font-size-xxl; 
-    // text-transform: uppercase;
-} 
+  width: 100%;
+  font-family: $font-secondary;
+  color: $color-secondary;
+  font-size: $font-size-xxl;
+  // text-transform: uppercase;
+}
 
 input {
-    padding: $space-xs; 
-    border: 2px solid $color-secondary; 
-} 
+  padding: $space-xs;
+  border: 2px solid $color-secondary;
+}
 
 input:focus {
-    color: $color-secondary; 
+  color: $color-secondary;
 }
 
 button {
-    background-color: $color-tertiary; 
-    color: $color-primary;
-    text-transform: uppercase;
-    border: 2px solid $color-primary; 
-    border-radius: $space-xxs;
-    padding: $space-xs $space-sml; 
-} 
+  background-color: $color-tertiary;
+  color: $color-primary;
+  text-transform: uppercase;
+  border: 2px solid $color-primary;
+  border-radius: $space-xxs;
+  padding: $space-xs $space-sml;
+}
 
 button:hover,
 button:focus {
-    background-color: $color-primary; 
-    color: $color-tertiary; 
-    // letter-spacing: $space-xxs;
-    border: 2px solid $color-tertiary; 
-    transition: all .2s;
-} 
+  background-color: $color-primary;
+  color: $color-tertiary;
+  // letter-spacing: $space-xxs;
+  border: 2px solid $color-tertiary;
+  transition: all 0.2s;
+}
 
 // button:hover::after {
 //     content: ' »';
-// } 
+// }
 
-.gallery { 
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .galleryCard {
-    list-style-type: none;
-    margin: $space-sml; 
-    position: relative; 
-} 
+  list-style-type: none;
+  margin: $space-sml;
+  position: relative;
+}
 
 .textContainer {
-    background-color: $color-secondary; 
-    color: $color-white; 
-    padding: $space-xs; 
-    position: absolute;
-    right: 0; 
-    bottom: 0;  
-} 
+  background-color: $color-secondary;
+  color: $color-white;
+  padding: $space-xs;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  & a {
+    color: #fff;
+  }
+}
 
 img {
-    width: 300px; 
-    height: 300px; 
-    object-fit: cover;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 
 footer {
-    background-color: $color-tertiary; 
-    color: $color-white; 
-    font-size: $font-size-xs;
-    width: 100%; 
-    align-self: flex-end;
-    bottom: 0px; 
-    padding: $font-size-xxs 0; 
-} 
+  background-color: $color-tertiary;
+  color: $color-white;
+  font-size: $font-size-xs;
+  width: 100%;
+  align-self: flex-end;
+  bottom: 0px;
+  padding: $font-size-xxs 0;
+}
 
 .photoInfo {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .fa-twitter {
-    color: #1DA1F2; 
-} 
+  color: #1da1f2;
+}
 
 .fa-instagram {
-    color: #DD2A7B; 
-} 
+  color: #dd2a7b;
+}
 
 a {
-    text-decoration: none;
-    transition: all .2s;
-} 
+  text-decoration: none;
+  transition: all 0.2s;
+}
 
 a:link,
 a:visited {
-    color: $color-white; 
-} 
+  color: $color-white;
+}
 
 a:hover,
 a:focus {
-    color: $color-hover; 
-    border-bottom: 1px solid $color-hover; 
+  color: $color-hover;
+  border-bottom: 1px solid $color-hover;
 }

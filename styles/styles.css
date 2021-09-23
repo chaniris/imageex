@@ -393,6 +393,9 @@ button:focus {
   right: 0;
   bottom: 0;
 }
+.textContainer a {
+  color: #fff;
+}
 
 img {
   width: 300px;
@@ -417,11 +420,11 @@ footer {
 }
 
 .fa-twitter {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 .fa-instagram {
-  color: #DD2A7B;
+  color: #dd2a7b;
 }
 
 a {
