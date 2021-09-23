@@ -8,7 +8,12 @@ h1 {
   color: $color-secondary;
   font-size: $font-size-xxl;
   // text-transform: uppercase;
+  // text-shadow: $font-size-xs $font-size-xxs $color-quaternary;
 }
+
+span {
+  color: $color-tertiary;
+} 
 
 input {
   padding: $space-xs;
