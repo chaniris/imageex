@@ -1,0 +1,16 @@
+@media (max-width: 900px) {
+    html {
+        font-size: 112%; 
+    }
+    h1 {
+        font-size: $font-size-xl; 
+    } 
+    form {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 60%;
+        height: 10rem; 
+        margin: 0 auto; 
+    } 
+}
