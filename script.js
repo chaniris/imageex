@@ -32,7 +32,8 @@ app.getPhotos = (searchTerm) => {
     unsplashEndpoint.search = new URLSearchParams({
         // pass in parameters 
         client_id: app.apiKey,
-        query: searchTerm
+        query: searchTerm, 
+        per_page: 12
     });
 
     // request data with fetch api 
